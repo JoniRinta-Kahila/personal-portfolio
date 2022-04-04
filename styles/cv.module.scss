@@ -12,11 +12,13 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.container .educationSection {
+.container .cvSection {
   padding: 15px;
+  // width: 820px;
+  max-width: 805px;
 }
 
-.container .educationSection h2 {
+.container .cvSection h2 {
   color: #00ffff;
   text-transform: uppercase;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
