@@ -1,0 +1,131 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  position: attr('data-position');
+  top: 0;
+  height: 93px;
+  width: 100%;
+  background: #0f334d;
+  justify-content: center;
+  align-items: center;
+  transition: top 0.3s;
+  filter: drop-shadow(0 8px 1px rgba(0, 26, 44, 0.158));
+  z-index: 10000;
+
+  &[data-position~='absolute'] {
+    position: absolute;
+  }
+
+  &[data-position~='fixed'] {
+    position: fixed;
+  }
+
+  &[data-position~='inherit'] {
+    position: inherit;
+  }
+
+  &[data-position~='initial'] {
+    position: initial;
+  }
+
+  &[data-position~='relative'] {
+    position: relative;
+  }
+
+  &[data-position~='revert'] {
+    position: revert;
+  }
+
+  &[data-position~='static'] {
+    position: static;
+  }
+
+  &[data-position~='sticy'] {
+    position: sticy;
+  }
+
+  &[data-position~='unset'] {
+    position: unset;
+  }
+}
+
+.container .logo {
+  margin: 0 0 0 28px;
+}
+
+.container .hamburger {
+  display: none;
+  margin-left: auto;
+  margin-right: 15px;
+  color: #f6fff6;
+  cursor: pointer;
+}
+
+.container .hamburgerMenu {
+  position: absolute;
+  align-self: flex-start;
+  margin: 0;
+  margin-top: 93px;
+  list-style: none;
+  padding: 0 15px;
+  width: 80%;
+  background: #000000c0;
+  animation: rotatemenu 500ms ease-in-out forwards;
+  transform-origin: top center;
+
+  @media only screen and (max-width: 450px) {
+    width: 100%;
+  }
+}
+
+@keyframes rotatemenu {
+  0% {
+    transform: rotateX(-90deg);
+  }
+
+  70% {
+    transform: rotateX(20deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.hamburger input[type=checkbox] {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .container .hamburger {
+    display: flex;
+  }
+
+  .container .navbarMenuRendererCenter {
+    display: none;
+  }
+
+  .container .navbarMenuRendererEnd {
+    display: none;
+  }
+}
+
+/*
+TODO hide burgermenu when screen width is enough to display links.
+BUG maybe in node-sass. calc not work with vars.
+*/
+// $hide-burger-menu: calc(1 + 700px);
+
+@media only screen and (min-width: 701px) {
+  .container .hamburgerMenu {
+    display: none;
+  }
+
+  .container .navbarMenuRendererCenter {
+    display: unset;
+  }
+
+  .container .navbarMenuRendererEnd {
+    display: unset;
+  }
+}

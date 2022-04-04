@@ -1,3 +1,87 @@
+@mixin particleText {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .container {
-  padding: 0 2rem;
+  padding-top: 101px; // for navbar
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: calc(80vh - 95px); // footer is 95px
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  
+}
+
+.container .header {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .header h1 {
+  @include particleText();
+  background-color: #ffffff;
+  font-size: 20vw;
+  font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  filter: drop-shadow(5px 5px 5px #000);
+  margin: 0
+}
+
+.container .header h2 {
+  @include particleText();
+  font-size: 3vw;
+  background-color: #ffffff;
+  text-align: center;
+  filter: drop-shadow(5px 5px 5px #000);
+  margin: 0;
+
+  b {
+    @include particleText();
+    background-color: orange;
+  }
+}
+
+.container .header h3 {
+  @include particleText();
+  background-color: #ffca68;
+  font-size: 2vw;
+
+  // text-align: center;
+  filter: drop-shadow(5px 5px 5px #000);
+  margin: 0;
+  margin-left: 5%;
+}
+
+.container .header h4 {
+  @include particleText();
+  font-size: 2vw;
+  background-color: #ffe9c2;
+  margin: 0;
+  margin-left: 15%;
+  filter: drop-shadow(5px 5px 5px #000);
+}
+
+// set max size for fonts
+@media screen and (min-width: 1000px) {
+  .container .header h1 {
+    font-size: 195px;
+  }
+
+  .container .header h2 {
+    font-size: 30px;
+  }
+
+  .container .header h3 {
+    font-size: 20px;
+  }
+
+  .container .header h4 {
+    font-size: 20px;
+  }
 }

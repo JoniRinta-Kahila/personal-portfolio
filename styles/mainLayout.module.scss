@@ -1,0 +1,15 @@
+.menuItems {
+  display: flex;
+  flex-direction: row;
+  margin: 0 15px;
+}
+
+.menuItems a {
+  margin: 0 15px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.container .content {
+  min-height: calc(100vh - 90px); // 100vh - footer height
+}
