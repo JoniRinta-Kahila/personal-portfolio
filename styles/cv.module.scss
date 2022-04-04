@@ -6,10 +6,18 @@
   align-items: center;
 }
 
+.container h1 {
+  text-transform: uppercase;
+  color: #86cfb0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .container .educationSection {
   padding: 15px;
 }
 
 .container .educationSection h2 {
   color: #00ffff;
+  text-transform: uppercase;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

@@ -11,7 +11,7 @@ const Cv: {
   
   return (
     <div className={styles.container}>
-      <h1>My CV</h1>
+      <h1>curriculum vitae</h1>
       <div className={styles.educationSection}>
         <h2>Education</h2>
         {

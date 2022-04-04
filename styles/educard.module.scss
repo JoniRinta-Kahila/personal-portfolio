@@ -22,18 +22,36 @@
   border-radius: 2em;
   display: inline-block;
   width: fit-content;
-  padding: 0 8px;
+  padding: 1px 8px;
   margin: 5px 0;
   font-weight: 700;
   color: #fff;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .container .item .row .perioid {
   width: 50%;
   text-align: end;
   color: #fff;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .container .item .description {
-  color: #54ffd0
+  color: #54ffd0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 650px) {
+  .container .item .row {
+    flex-direction: column-reverse;
+  }
+
+  .container .item .row .perioid p {
+    text-align: start;
+    margin-bottom: 0;
+  }
+
+  .container .item .row .school {
+    width: 100%;
+  }
 }
