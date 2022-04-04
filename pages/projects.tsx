@@ -1,10 +1,8 @@
 import type { NextPage } from 'next';
+import { ReactElement } from 'react';
 import MainLayout from '../components/layouts/main'
-import { LayoutProps } from '../types/pageWithLayouts'
 
-const Projects: {
-  layout: LayoutProps
-} = (): JSX.Element => {
+const Projects = () => {
   
   return (
     <div>
@@ -13,6 +11,6 @@ const Projects: {
   )
 }
 
-Projects.layout = MainLayout
+Projects.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default Projects

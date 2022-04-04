@@ -2,17 +2,13 @@ import type { NextPage } from 'next'
 import styles from '../styles/Home.module.scss'
 import MainLayout from '../components/layouts/main'
 import { tsParticles } from 'tsparticles';
-import { useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
 
 const Home = () => {
 
   useEffect(() => {
     console.log('useEffect => load particles')
     tsParticles.load('tsparticles', {
-      // fullScreen: false,
-      // backgroundMode: true,
-      // background:,
-      // responsive: [{maxWidth: 100, options: {}}],
       style: { height: '60%' },
       fps_limit: 60,
       interactivity: {
@@ -97,6 +93,6 @@ const Home = () => {
   )
 }
 
-Home.layout = MainLayout
+Home.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default Home

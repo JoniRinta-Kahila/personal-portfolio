@@ -6,10 +6,9 @@ import { eduData } from '../data/edudata';
 import EduCard from '../components/eduCard';
 import { workData } from '../data/workData';
 import WorkCard from '../components/workCard';
+import { ReactElement } from 'react';
 
-const Cv: {
-  layout: LayoutProps
-} = (): JSX.Element => {
+const Cv = () => {
   
   return (
     <div className={styles.container}>
@@ -30,6 +29,6 @@ const Cv: {
   )
 }
 
-Cv.layout = MainLayout
+Cv.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default Cv
