@@ -1,0 +1,75 @@
+.container {
+  background: #6487e8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #6487e8;
+  border-radius: 15px;
+
+  width: 340px;
+
+  padding: 8px;
+
+  margin: 10px;
+}
+
+.container:hover {
+  border-color: #87daff;
+}
+
+.container .name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container .name h3 {
+  margin: 0 8px;
+}
+
+.container .description {
+  height: 60px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.container .stats {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+.container .stats span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: auto;
+}
+
+.container .stats span svg {
+  margin-right: 4px;
+}
+
+.container .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 8px 0;
+}
+
+.container .button a {
+  border: 1px solid #000;
+  border-radius: 15px;
+
+  width: fit-content;
+  padding: 2px 8px;
+}
+
+.container .button a:hover {
+  background: #87daff;
+  border-color: #87daff;
+}
