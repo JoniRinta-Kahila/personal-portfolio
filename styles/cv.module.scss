@@ -1,0 +1,15 @@
+.container {
+  margin-top: 101px; // for navbar
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .educationSection {
+  padding: 15px;
+}
+
+.container .educationSection h2 {
+  color: #00ffff;
+}

@@ -6,9 +6,9 @@ import Footer from '../footer'
 
 const MenuItems: React.FC = () => (
   <div className={styles.menuItems}>
+    <Link href='/'>HOME</Link>
     <Link href='/cv'>CV</Link>
     <Link href='/projects'>PROJECTS</Link>
-    <Link href='/'>HOME</Link>
   </div>
 )
 
