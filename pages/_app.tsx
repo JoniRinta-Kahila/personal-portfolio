@@ -1,25 +1,3 @@
-// import '../styles/globals.scss';
-// import type { AppProps } from 'next/app';
-// import type { ReactElement, ReactNode } from 'react';
-// import PageWithLayoutType from '../types/pageWithLayouts'
-
-// type AppLayoutProps = AppProps & {
-//   Component: PageWithLayoutType
-//   pageProps: any
-// }
-
-// const MyApp = ({ Component, pageProps }: AppLayoutProps) => {
-//   const Layout = Component.layout || ((children) => <>{children}</>)
-
-//     return (
-//       <Layout>
-//         <Component {...pageProps} />
-//       </Layout>
-//     )
-// }
-
-// export default MyApp
-
 import '../styles/globals.scss';
 import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
