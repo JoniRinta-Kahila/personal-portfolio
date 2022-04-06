@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import GithubRepos from '../components/githubRepos';
+import GithubRepos from '../components/githubRepos/githubRepos';
 import MainLayout from '../components/layouts/main'
 import styles from '../styles/projects.module.scss'
 

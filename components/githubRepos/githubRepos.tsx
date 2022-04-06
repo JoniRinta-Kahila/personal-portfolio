@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { IRepo } from '../types/githubData'
-import styles from '../styles/githubRepos.module.scss'
-import RepoCard from './repoCard'
+import { IRepo } from '../../types/githubData'
+import styles from '../../styles/githubRepos.module.scss'
+import ReposPaginator from './reposPaginator'
 
-type GithubReposProps = {
-
-}
-
-const GithubRepos: React.FC<GithubReposProps> = () => {
+const GithubRepos: React.FC = () => {
 
   const [repoData, setRepoData] = useState<IRepo[]>([])
   const [loading, setLoading] = useState<boolean>(false)
@@ -24,13 +20,8 @@ const GithubRepos: React.FC<GithubReposProps> = () => {
   }, [])
 
   if (loading) return <div className={styles.loading}>Loading...</div>
-  return (
-    <div className={styles.container}>
-      {
-        repoData && repoData.map(x => <RepoCard key={x.id} data={x} />)
-      }
-    </div>
-  )
+
+  return <div className={styles.container}><ReposPaginator items={repoData} itemsPerPage={6} /></div>
 }
 
 export default GithubRepos

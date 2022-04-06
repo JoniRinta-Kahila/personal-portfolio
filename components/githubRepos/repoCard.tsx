@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from '../styles/repoCard.module.scss'
+import styles from '../../styles/repoCard.module.scss'
 import { RiGitRepositoryLine } from 'react-icons/ri'
 import { BsFileEarmarkCode } from 'react-icons/bs'
 import { AiOutlineStar, AiOutlineFork } from 'react-icons/ai'
 import Link from 'next/link'
-import { IRepo } from '../types/githubData'
+import { IRepo } from '../../types/githubData'
 
 
 

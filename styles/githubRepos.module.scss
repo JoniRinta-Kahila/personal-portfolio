@@ -4,3 +4,19 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.container ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.container ul li {
+  margin: 0 8px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
