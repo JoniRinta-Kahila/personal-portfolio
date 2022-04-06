@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { IRepo } from '../../types/githubData'
 import styles from '../../styles/githubRepos.module.scss'
 import ReposPaginator from './reposPaginator'
+import { GridLoader } from 'react-spinners'
 
 const GithubRepos: React.FC = () => {
 
@@ -19,13 +20,17 @@ const GithubRepos: React.FC = () => {
       .catch(err => console.error(err.message))
   }, [])
 
-  if (loading) return <div className={styles.loading}>Loading...</div>
+  // if (loading) return <div className={styles.loading}><GridLoader size={25} color='#fff' /></div>
 
   return (
     <div className={styles.container}>
       <h2>My public GitHub repos</h2>
       <div className={styles.repos}>
-        <ReposPaginator items={repoData} itemsPerPage={6} />
+        {
+          loading
+          ? <GridLoader size={25} color='#fff' />
+          : <ReposPaginator items={repoData} itemsPerPage={6} />
+        }
       </div>
     </div>
   )
