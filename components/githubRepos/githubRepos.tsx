@@ -21,7 +21,14 @@ const GithubRepos: React.FC = () => {
 
   if (loading) return <div className={styles.loading}>Loading...</div>
 
-  return <div className={styles.container}><ReposPaginator items={repoData} itemsPerPage={6} /></div>
+  return (
+    <div className={styles.container}>
+      <h2>My public GitHub repos</h2>
+      <div className={styles.repos}>
+        <ReposPaginator items={repoData} itemsPerPage={6} />
+      </div>
+    </div>
+  )
 }
 
 export default GithubRepos
