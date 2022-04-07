@@ -53,9 +53,27 @@ const ReposPaginator: React.FC<ReposPaginatorProps> = ({ itemsPerPage, items }) 
   return (
     <>
       <div className={styles.sorters}>
-        <input type='radio' value={RepoSortStyle.recent} name='sort' checked={sorter === RepoSortStyle.recent} onChange={() => setSorter(RepoSortStyle.recent)} /> Recent
-        <input type='radio' value={RepoSortStyle.stars} name='sort' checked={sorter === RepoSortStyle.stars} onChange={() => setSorter(RepoSortStyle.stars)} /> Stars
-        <input type='radio' value={RepoSortStyle.language} name='sort' checked={sorter === RepoSortStyle.language} onChange={() => setSorter(RepoSortStyle.language)} /> Language
+        <input
+          type='radio'
+          value={RepoSortStyle.recent}
+          name='sort'
+          checked={sorter === RepoSortStyle.recent}
+          onChange={() => setSorter(RepoSortStyle.recent)}
+        /> Recent
+        <input
+          type='radio'
+          value={RepoSortStyle.stars}
+          name='sort'
+          checked={sorter === RepoSortStyle.stars}
+          onChange={() => setSorter(RepoSortStyle.stars)}
+        /> Stars
+        <input
+          type='radio'
+          value={RepoSortStyle.language}
+          name='sort'
+          checked={sorter === RepoSortStyle.language}
+          onChange={() => setSorter(RepoSortStyle.language)}
+        /> Language
       </div>
       <Items items={currentItems} sorter={sorter} />
       <ReactPaginate
