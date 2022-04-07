@@ -1,0 +1,13 @@
+.sorters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+
+  justify-content: center;
+  color: #f0ffff;
+}
+
+.sorters input {
+  margin-right: 8px;
+}
