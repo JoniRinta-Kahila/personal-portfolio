@@ -1,0 +1,72 @@
+.container {
+  position: relative;
+  min-width: 320px;
+  height: 440px;
+  margin: 30px;
+}
+
+.container .box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #2a2b2f;
+  border: 2px solid #1e1f23;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(25, 35, 77, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container .box::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(107, 109, 131, 0.05);
+  pointer-events: none;
+}
+
+.container .box .content{
+  padding: 20px;
+  text-align: center;
+}
+
+.container .box .content h2{
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 4em;
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.container .box .content h3{
+  font-size: 1.8em;
+  color: rgba(255,255,255,0.5);
+  z-index: 1;
+}
+
+.container .box .content p{
+  font-size: 1em;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  z-index: 1;
+}
+
+.container .box .content a{
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  background: #000;
+  margin-top: 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 400;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
