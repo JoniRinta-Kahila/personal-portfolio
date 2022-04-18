@@ -8,6 +8,7 @@ import styles from '../styles/projects.module.scss'
 const Projects = () => {
   return (
     <div className={styles.container}>
+      <h2>Pinned projects</h2>
       <PinnedProjects />
       <GithubRepos />
     </div>

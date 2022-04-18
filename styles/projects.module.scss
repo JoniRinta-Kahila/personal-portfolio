@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
+
 .container {
   margin-top: 101px; // for navbar
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+}
+
+.container h2 {
+  font-family: 'Coda', cursive;
+  color: azure;
+  font-size: 32px;
 }
