@@ -13,3 +13,30 @@
   accent-color: orangeRed;
 }
 
+.paginate {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row !important;
+  // justify-content: space-between !important;
+  list-style: none;
+  padding: 0 5rem !important;
+}
+
+.paginate li a {
+  border-radius: 7px;
+  padding: 0.1rem 1rem;
+  // border: 1px solid orangered;
+  cursor: pointer;
+}
+
+.paginate .paginateDisabled a {
+  color: grey !important;
+  cursor: default !important;
+}
+
+.paginate .paginateActive {
+  background-color: orangered !important;
+  border-color: transparent !important;
+  color: #fff !important;
+  min-width: 32px !important;
+}

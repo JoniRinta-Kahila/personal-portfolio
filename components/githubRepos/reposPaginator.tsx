@@ -87,6 +87,9 @@ const ReposPaginator: React.FC<ReposPaginatorProps> = ({ itemsPerPage, items }) 
         pageCount={pageCount}
         previousLabel='< previous'
         renderOnZeroPageCount={undefined}
+        className={styles.paginate}
+        disabledClassName={styles.paginateDisabled}
+        activeClassName={styles.paginateActive}
       />
     </>
   )
