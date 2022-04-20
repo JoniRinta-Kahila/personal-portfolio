@@ -20,8 +20,6 @@ const GithubRepos: React.FC = () => {
       .catch(err => console.error(err.message))
   }, [])
 
-  // if (loading) return <div className={styles.loading}><GridLoader size={25} color='#fff' /></div>
-
   return (
     <div className={styles.container}>
       <h2>My public GitHub repos</h2>
