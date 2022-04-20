@@ -28,7 +28,7 @@ const GithubRepos: React.FC = () => {
       <div className={styles.repos}>
         {
           loading
-          ? <GridLoader size={25} color='#fff' />
+          ? <div className={styles.loading}><GridLoader size={25} color='#fff' /></div>
           : <ReposPaginator items={repoData} itemsPerPage={6} />
         }
       </div>
