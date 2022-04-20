@@ -14,7 +14,7 @@ const MenuItems: React.FC = () => (
 
 const Main: LayoutProps = ({ children }) => {
   return (
-    <div className={styles.container}>
+    <>
       <Navbar
         hideNavbarOnScroll
         menuRendererEnd={<MenuItems/>}
@@ -22,9 +22,9 @@ const Main: LayoutProps = ({ children }) => {
       />
       <div className={styles.content}>
         {children}
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   )
 }
 
