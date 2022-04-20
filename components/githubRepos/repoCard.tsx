@@ -14,9 +14,16 @@ type RepoCardProps = {
 
 const RepoCard: React.FC<RepoCardProps> = ({ data }) => {
   return (
+    <>
+    <svg width="0" height="0">
+      <linearGradient id="gradient-svg" x1="100%" y1="100%" x2="0%" y2="100%">
+        <stop stopColor="#ffff00" offset="0%" />
+        <stop stopColor="#ff0000" offset="100%" />
+      </linearGradient>
+    </svg>
     <div className={styles.container}>
       <span className={styles.name}>
-        <RiGitRepositoryLine />
+        <RiGitRepositoryLine style={{ fill: "url(#gradient-svg)" }} />
         <h3>
           {
             data.name ?? '- ? -'
@@ -30,19 +37,19 @@ const RepoCard: React.FC<RepoCardProps> = ({ data }) => {
       </p>
       <div className={styles.stats}>
         <span>
-          <BsFileEarmarkCode />
+          <BsFileEarmarkCode style={{ fill: "url(#gradient-svg)" }} />
           {
             data.language ?? '- ? -'
           }
         </span>
         <span>
-          <AiOutlineStar />
+          <AiOutlineStar style={{ fill: "url(#gradient-svg)" }} />
           {
             data.stargazers_count ?? 0
           }
         </span>
         <span>
-          <AiOutlineFork />
+          <AiOutlineFork style={{ fill: "url(#gradient-svg)" }} />
           {
             data.forks ?? 0
           }
@@ -56,6 +63,7 @@ const RepoCard: React.FC<RepoCardProps> = ({ data }) => {
         </Link>
       </div>
     </div>
+    </>
   )
 }
 

@@ -1,16 +1,16 @@
 .container {
-  background: #6487e8;
+  background: #283338;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #6487e8;
+  border: 1px solid #ff4500;
   border-radius: 15px;
 
   width: 340px;
-
   padding: 8px;
-
   margin: 10px;
+
+  color: #fff0eb;
 }
 
 .container:hover {
@@ -40,6 +40,7 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 5px;
+  color: #ffedd9;
 }
 
 .container .stats span {
@@ -62,11 +63,14 @@
 }
 
 .container .button a {
-  border: 1px solid #000;
+  border: 1px solid #f7895a;
   border-radius: 15px;
 
   width: fit-content;
   padding: 2px 8px;
+
+  font-weight: 700;
+  color: #fff8dc;
 }
 
 .container .button a:hover {
