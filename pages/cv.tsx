@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import MainLayout from '../components/layouts/main'
-import { LayoutProps } from '../types/pageWithLayouts'
 import styles from '../styles/cv.module.scss'
 import { eduData } from '../data/edudata';
 import EduCard from '../components/eduCard';
