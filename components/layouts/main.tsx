@@ -3,6 +3,7 @@ import type { LayoutProps } from '../../types/pageWithLayouts'
 import Navbar from '../navbar'
 import styles from '../../styles/mainLayout.module.scss'
 import Footer from '../footer'
+import ModalContextProvider from '../context/modalContextProvider'
 
 const MenuItems: React.FC = () => (
   <div className={styles.menuItems}>
@@ -14,7 +15,7 @@ const MenuItems: React.FC = () => (
 
 const Main: LayoutProps = ({ children }) => {
   return (
-    <>
+    <ModalContextProvider>
       <Navbar
         hideNavbarOnScroll
         menuRendererEnd={<MenuItems/>}
@@ -24,7 +25,7 @@ const Main: LayoutProps = ({ children }) => {
         {children}
         <Footer />
       </div>
-    </>
+    </ModalContextProvider>
   )
 }
 
