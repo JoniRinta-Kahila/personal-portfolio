@@ -7,11 +7,7 @@ import styles from '../styles/footer.module.scss'
 import Contactform from './contactform';
 import { useModalContext } from './context/modalContextProvider'
 
-type FooterProps = {
-
-}
-
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC = () => {
 
   const { setModalContent, setModalOpenState } = useModalContext()
 
