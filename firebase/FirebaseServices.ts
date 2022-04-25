@@ -17,8 +17,8 @@ const firebaseConfig = {
 let app: FirebaseApp;
 
 const AppInstance = () => {
-  if (app) initializeApp(firebaseConfig);
-  return app
+  if (!app) initializeApp(firebaseConfig);
+  return app;
 }
 
 const GetFirestoreInstance = () => {

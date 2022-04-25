@@ -18,7 +18,8 @@
     "react-modal": "^3.14.4",
     "react-paginate": "^8.1.2",
     "react-spinners": "^0.11.0",
-    "tsparticles": "^1.42.4"
+    "tsparticles": "^1.42.4",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.181",
@@ -26,6 +27,7 @@
     "@types/react": "17.0.43",
     "@types/react-dom": "17.0.14",
     "@types/react-modal": "^3.13.1",
+    "@types/validator": "^13.7.2",
     "eslint": "8.12.0",
     "eslint-config-next": "12.1.4",
     "sass": "^1.49.11",

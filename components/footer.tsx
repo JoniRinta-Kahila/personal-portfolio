@@ -4,7 +4,7 @@ import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { MdAlternateEmail } from 'react-icons/md'
 import { RiMessage2Line } from 'react-icons/ri'
 import styles from '../styles/footer.module.scss'
-import Contactform from './contactform';
+import Contactform from './contactUs/contactform';
 import { useModalContext } from './context/modalContextProvider'
 
 const Footer: React.FC = () => {
