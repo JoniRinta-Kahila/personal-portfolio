@@ -1,0 +1,92 @@
+.container {
+  width: 100%;
+  max-width: 550px;
+  background: rgba(0, 0, 0, 0.89);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px orangered;
+}
+
+.container *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container .title {
+  color: #c5ecfd;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.container .form {
+  display: flex;
+}
+
+.container .form .inputs {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4%;
+}
+
+.container .form .inputs,
+.container .form .message {
+  width: 48%;
+}
+
+.container .form input,
+.container .form .message textarea {
+  margin: 10px 0;
+  background: transparent;
+  border: 0px;
+  border-bottom: 3px solid #c5ecfd;
+  padding: 10px;
+  color: #c5ecfd;
+  width: 100%;
+}
+
+.container .form .message textarea {
+  height: 212px;
+}
+
+.container .form .message textarea::-webkit-input-placeholder,
+.container .form input::-webkit-input-placeholder {
+  color: azure;
+}
+
+.container .form .message textarea::-moz-placeholder,
+.container .form input::-moz-placeholder {
+  color: azure;
+}
+
+.container .form .message textarea::-ms-input-placeholder,
+.container .form input::-ms-input-placeholder {
+  color: azure;
+}
+
+.container .form .message .submit {
+  background: #39b7dd;
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 100%;
+  border: none;
+}
+
+@media screen and (max-width: 800px) {
+  .container .form {
+    flex-direction: column;
+  }
+  .container .form .message textarea {
+    height: 80px;
+  }
+  .container .form .inputs,
+  .container .form .message {
+    width: 100%;
+  }
+}
