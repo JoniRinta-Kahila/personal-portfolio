@@ -33,8 +33,7 @@ const Footer: React.FC<FooterProps> = () => {
           <BsLinkedin size={30} color='#f0ffff' />
         </a>
       </Link>
-
-      <Link href='mailto:joni.rinta-kahila@hotmail.com' passHref>
+      <Link href='m&#97;i&#108;to&#58;j&#111;ni&#46;r%69&#37;6Et%61&#45;kahi&#108;%61&#64;hotm%&#54;1&#105;l&#46;co%6D' passHref>
         <a>
           <MdAlternateEmail size={30} color='#ffc0cb' />
         </a>
