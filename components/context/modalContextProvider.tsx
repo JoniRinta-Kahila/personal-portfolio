@@ -14,7 +14,7 @@ export const useModalContext = () => {
   const context = useContext(ModalContext)
 
   if (context === undefined)
-    throw new Error('Call "useModal´Context" only inside a "ModalContextProvider"')
+    throw new Error('Call "useModalContext" only inside a "ModalContextProvider"')
 
   return context
 }
