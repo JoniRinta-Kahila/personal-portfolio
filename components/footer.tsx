@@ -3,13 +3,23 @@ import React from 'react'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { MdAlternateEmail } from 'react-icons/md'
 import { RiMessage2Line } from 'react-icons/ri'
-import styles from '../styles/footer.module.scss';
+import styles from '../styles/footer.module.scss'
+import Contactform from './contactform';
+import { useModalContext } from './context/modalContextProvider'
 
 type FooterProps = {
 
 }
 
 const Footer: React.FC<FooterProps> = () => {
+
+  const { setModalContent, setModalOpenState } = useModalContext()
+
+  const openContactformModal = () => {
+    setModalContent(<Contactform />)
+    setModalOpenState(true)
+  }
+
   return (
     <div className={styles.container}>
       <Link href='https://github.com/JoniRinta-Kahila' passHref>
@@ -30,11 +40,9 @@ const Footer: React.FC<FooterProps> = () => {
         </a>
       </Link>
 
-      <Link href='https://github.com/JoniRinta-Kahila' passHref>
-        <a target='_blank' rel='noreferrer'>
-          <RiMessage2Line size={30} color='#ff4500' />
-        </a>
-      </Link>
+      <div onClick={openContactformModal} style={{cursor:'pointer'}}>
+        <RiMessage2Line size={30} color='#ff4500' />
+      </div>
 
     </div>
   )

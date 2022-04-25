@@ -20,7 +20,7 @@ export const useModalContext = () => {
 }
 
 const ModalContextProvider: React.FC = ({ children }) => {
-  const [modalIsOpen, setModalIsOpen] = useState<boolean>(true)
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false)
   const [modalContent, setModalContent] = useState<JSX.Element|undefined>()
   const defaultStyle = {
     content: {
@@ -30,16 +30,19 @@ const ModalContextProvider: React.FC = ({ children }) => {
       left: '50%',
       right: 'auto',
       transform: 'translate(-50%, -50%)',
+      background: 'transparent',
+      border: 'none'
     },
     overlay: {
       zIndex: 10000,
-      backgroundColor: 'rgba(21,9,110,0.53)'
+      backgroundColor: 'rgba(21,9,110,0.53)',
     }
   }
 
   const onRequestClose = () => {
-    setModalIsOpen(false)
+    document.body.style.overflow = 'unset';
     setModalContent(undefined)
+    setModalIsOpen(false)
   }
 
   return (
@@ -56,7 +59,7 @@ const ModalContextProvider: React.FC = ({ children }) => {
         onRequestClose={ onRequestClose }
         style={ defaultStyle }
         contentLabel='FOO BAR'
-        preventScroll
+        onAfterOpen={() => document.body.style.overflow = 'hidden'}
       >
         { modalContent }
       </Modal>
