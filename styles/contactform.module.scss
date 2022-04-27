@@ -1,3 +1,11 @@
+.container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
 .container {
   width: 100%;
   max-width: 550px;
@@ -5,14 +13,6 @@
   padding: 30px;
   border-radius: 5px;
   box-shadow: 0 0 10px orangered;
-}
-
-.container *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  font-family: 'Roboto', sans-serif;
 }
 
 .container .title {
@@ -47,6 +47,11 @@
   width: 100%;
 }
 
+.container .form .message textarea:focus,
+.container .form input:focus {
+  border-bottom: 3px solid orangered;
+}
+
 .container .form .message textarea {
   height: 212px;
 }
@@ -67,7 +72,7 @@
 }
 
 .container .form .message .submit {
-  background: #39b7dd;
+  background: orangered;
   text-align: center;
   padding: 15px;
   border-radius: 5px;
@@ -76,15 +81,30 @@
   text-transform: uppercase;
   width: 100%;
   border: none;
+  transition: background 1s ease,
+    padding 2s linear;
+}
+
+.container .sendReady {
+  display: flex;
+  flex-direction: row;
+  color: azure;
+  align-items: center;
+}
+
+.container .sendReady svg {
+  margin-right: 15px;
 }
 
 @media screen and (max-width: 800px) {
   .container .form {
     flex-direction: column;
   }
+
   .container .form .message textarea {
     height: 80px;
   }
+
   .container .form .inputs,
   .container .form .message {
     width: 100%;
