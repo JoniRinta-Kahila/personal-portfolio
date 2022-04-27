@@ -21,3 +21,19 @@
   text-transform: uppercase;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.container .showMore {
+  display: flex;
+  justify-content: center;
+  margin: 18px 0;
+}
+
+.container .showMore button {
+  background: rgb(32, 106, 202);
+  padding: 15px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: none;
+}
