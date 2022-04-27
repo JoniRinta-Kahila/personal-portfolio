@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "fraktur";
+  src: local("fraktur"),
+    url('../fonts/fraktur.woff') format("woff");
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -51,6 +57,26 @@
 
 .container .logo {
   margin: 0 0 0 28px;
+}
+
+.container .logo h3 {
+  color: rgb(176, 211, 211);
+  font-family: fraktur;
+  font-size: 45px;
+  letter-spacing: 3px;
+
+  text-shadow:
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+  
+  // color: black;
+  -webkit-text-fill-color: #0f334d; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  // -webkit-text-stroke-color: rgb(22, 5, 24);
+
+  filter: drop-shadow(1px 1px #000);
 }
 
 .container .hamburger {

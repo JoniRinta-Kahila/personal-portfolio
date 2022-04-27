@@ -81,7 +81,8 @@ const Navbar: NextPage<NavbarProps> = ({
       {/* Logo */}
       <div className={styles.logo}>
         <a href={logoLink}>
-          <Image src={'/vercel.svg'} alt='logo' height={80} width={80} />
+          <h3>Rints.in</h3>
+          {/* <Image src={'/vercel.svg'} alt='logo' height={80} width={80} /> */}
         </a>
       </div>
 
