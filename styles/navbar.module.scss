@@ -66,13 +66,14 @@
   letter-spacing: 3px;
 
   text-shadow:
-  -1px -1px 0 #000,  
-   1px -1px 0 #000,
-   -1px 1px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
     1px 1px 0 #000;
-  
+
   // color: black;
-  -webkit-text-fill-color: #0f334d; /* Will override color (regardless of order) */
+  -webkit-text-fill-color: #0f334d;
+  /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   // -webkit-text-stroke-color: rgb(22, 5, 24);
 
