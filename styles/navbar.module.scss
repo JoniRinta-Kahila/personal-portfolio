@@ -88,13 +88,25 @@
   cursor: pointer;
 }
 
+.container .navbarMenuRendererEnd .navbarMenuItems  {
+  display: flex;
+  flex-direction: row;
+  margin: 0 15px;
+}
+
+.container .navbarMenuRendererEnd .navbarMenuItems a {
+  margin: 0 15px;
+  color: #fff;
+  font-weight: 700;
+}
+
 .container .hamburgerMenu {
   position: absolute;
   align-self: flex-start;
   margin: 0;
   margin-top: 93px;
   list-style: none;
-  padding: 0 15px;
+  // padding: 0 15px;
   width: 80%;
   background: #000000c0;
   animation: rotatemenu 500ms ease-in-out forwards;
@@ -103,6 +115,29 @@
   @media only screen and (max-width: 450px) {
     width: 100%;
   }
+}
+
+.container .hamburgerMenu .hamburgerMenuItems {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #0f334d;
+  width: 100%;
+}
+
+.container .hamburgerMenu .hamburgerMenuItems a {
+  color: #d6f2f2;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 6px;
+  font-size: large;
+}
+
+.container .hamburgerMenu .hamburgerMenuItems a:hover {
+  color: rgb(181, 131, 181);
 }
 
 @keyframes rotatemenu {

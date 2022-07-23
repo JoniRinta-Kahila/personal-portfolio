@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { LayoutProps } from '../../types/pageWithLayouts'
-import Navbar from '../navbar'
+import Navbar from '../navbar/navbar'
 import styles from '../../styles/mainLayout.module.scss'
 import Footer from '../footer'
 import ModalContextProvider from '../context/modalContextProvider'
@@ -18,8 +18,6 @@ const Main: LayoutProps = ({ children }) => {
     <ModalContextProvider>
       <Navbar
         hideNavbarOnScroll
-        menuRendererEnd={<MenuItems/>}
-        hamburgerMenuRenderer={<MenuItems/>}
       />
       <div className={styles.content}>
         {children}
