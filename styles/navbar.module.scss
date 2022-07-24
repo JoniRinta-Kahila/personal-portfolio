@@ -98,6 +98,11 @@
   margin: 0 15px;
   color: #fff;
   font-weight: 700;
+  font-size: larger;
+}
+
+.container .navbarMenuRendererEnd .navbarMenuItems a:hover {
+  color: #FFA500;
 }
 
 .container .hamburgerMenu {
@@ -137,7 +142,7 @@
 }
 
 .container .hamburgerMenu .hamburgerMenuItems a:hover {
-  color: rgb(181, 131, 181);
+  color: #FFA500;
 }
 
 @keyframes rotatemenu {
