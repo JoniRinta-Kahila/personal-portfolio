@@ -43,16 +43,14 @@ const Navbar: NextPage<NavbarProps> = ({
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (burgerMenuRef.current && !burgerMenuRef.current.contains(event.target)) {
-        setMenuVisibility(false);
+        const brgrMenuBtnElNames = ['svg', 'path']
+        const clickedElementName = Object.values(((event as any).path) as HTMLElement[])[0].tagName;
 
-        // tee klikkauksen sisältävistä tageista arr, ja testaa sisältääkö kaksi ekaa nimeä svg tai path
-        // const path: [] = (event as any).path;
-        // console.log('path:', path)
-        // const isBurgerButton = path.some(obj => Object.values(obj).includes('svg'));
-        // const kek = Object.values(path).find((x: HTMLElement) => x.tagName);
-
-        // if (isBurgerButton) console.log('Its a burger')
-        // console.log(event)
+        if (brgrMenuBtnElNames.includes(clickedElementName)) {
+          setMenuVisibility(true); // true because onClick set menu visibility to !menuVisibility after this handler.
+        } else {
+          setMenuVisibility(false);
+        }
       }
     };
 
