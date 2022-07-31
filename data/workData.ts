@@ -14,7 +14,7 @@ export const workData: IWork[] = [
     title: 'Criminal sanctions officer',
     emplyer: 'Rikosseuraamuslaitos',
     description: 'Temporary official',
-    workStart: '05/2022',
+    workStart: '06/2022',
     workEnd: '07/2022',
   },
   {
