@@ -44,6 +44,15 @@ const Navbar: NextPage<NavbarProps> = ({
     const handleClickOutside = (event: MouseEvent) => {
       if (burgerMenuRef.current && !burgerMenuRef.current.contains(event.target)) {
         setMenuVisibility(false);
+
+        // tee klikkauksen sisältävistä tageista arr, ja testaa sisältääkö kaksi ekaa nimeä svg tai path
+        // const path: [] = (event as any).path;
+        // console.log('path:', path)
+        // const isBurgerButton = path.some(obj => Object.values(obj).includes('svg'));
+        // const kek = Object.values(path).find((x: HTMLElement) => x.tagName);
+
+        // if (isBurgerButton) console.log('Its a burger')
+        // console.log(event)
       }
     };
 
