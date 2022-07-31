@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { LegacyRef, useEffect, useRef, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import styles from '../../styles/navbar.module.scss';
@@ -34,12 +35,20 @@ const Navbar: NextPage<NavbarProps> = ({
   mobileMenuDefaultOpen = false,
   navbarPosition = ENavbarPosition.fixed,
 }) => {
+  const { pathname } = useRouter();
+
   const [menuVisibility, setMenuVisibility] = useState<boolean>(mobileMenuDefaultOpen);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   const navbarRef: LegacyRef<HTMLUListElement> | undefined | any = useRef(null);
   const burgerMenuRef: LegacyRef<HTMLUListElement> | undefined | any = useRef(null);
 
+  // close burger menu on page change
+  useEffect(() => {
+    setMenuVisibility(false);
+  }, [pathname])
+
+  // close burgermenu on click outside of menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (burgerMenuRef.current && !burgerMenuRef.current.contains(event.target)) {
