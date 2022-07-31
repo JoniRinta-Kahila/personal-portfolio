@@ -2,23 +2,23 @@ import { IWork } from "../types/workData";
 
 export const workData: IWork[] = [
   {
-    key: 0,
+    key: 9,
     title: 'Vocotional Teacher',
     emplyer: 'City of Vantaa',
     description: 'I teach React, JavaScript/TypeScript, Unity, Firebase',
     workStart: '08/2021',
     workEnd: 'continue',
   },
-  // {
-  //   key: 9,
-  //   title: 'Criminal sanctions officer',
-  //   emplyer: 'Rikosseuraamuslaitos',
-  //   description: 'Temporary official',
-  //   workStart: '05/2022',
-  //   workEnd: '07/2022',
-  // },
   {
-    key: 1,
+    key: 8,
+    title: 'Criminal sanctions officer',
+    emplyer: 'Rikosseuraamuslaitos',
+    description: 'Temporary official',
+    workStart: '05/2022',
+    workEnd: '07/2022',
+  },
+  {
+    key: 7,
     title: 'Teacher of programming and robotics',
     emplyer: 'LUMA Centre',
     description: 'Scratch programming for comprehensive- and high school students',
@@ -26,7 +26,7 @@ export const workData: IWork[] = [
     workEnd: '06/2021'
   },
   {
-    key: 2,
+    key: 6,
     title: 'Lead Developer',
     emplyer: 'Self-employed',
     description: 'Educational mobile game for Luma-Center. The purpose of the game is to encourage children and young students in natural sciences.',
@@ -34,7 +34,7 @@ export const workData: IWork[] = [
     workEnd: '06/2021',
   },
   {
-    key: 4,
+    key: 5,
     title: 'Criminal sanctions officer',
     emplyer: 'Rikosseuraamuslaitos',
     description: 'Temporary official',
@@ -42,7 +42,7 @@ export const workData: IWork[] = [
     workEnd: '11/2019',
   },
   {
-    key: 5,
+    key: 4,
     title: 'Security officer',
     emplyer: 'Palmia Oy',
     description: 'Security officer at Helsinki city public transportation.',
@@ -58,7 +58,7 @@ export const workData: IWork[] = [
     workEnd: 'continue',
   },
   {
-    key: 6,
+    key: 2,
     title: 'Security officer',
     emplyer: 'Securitas Oy',
     description: 'Security officer at Helsinki city public transportation',
@@ -66,7 +66,7 @@ export const workData: IWork[] = [
     workEnd: '10/2015',
   },
   {
-    key: 7,
+    key: 1,
     title: 'Telemarketer',
     emplyer: 'Aller Julkaisut Oy',
     description: 'Telemarketer',
@@ -74,7 +74,7 @@ export const workData: IWork[] = [
     workEnd: '07/2010',
   },
   {
-    key: 8,
+    key: 0,
     title: 'Telemarketer',
     emplyer: 'Enia Oy',
     description: 'Subscription seller and advisor',
