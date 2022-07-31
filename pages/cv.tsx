@@ -7,6 +7,7 @@ import { workData } from '../data/workData'
 import WorkCard from '../components/workCard'
 import { ReactElement, useRef, useState } from 'react'
 import { IWork } from '../types/workData'
+// import { skillsData } from '../data/skillsData'
 
 const Cv = () => {
   
@@ -32,6 +33,14 @@ const Cv = () => {
           eduData.map(x => <EduCard key={x.key} data={x} />)
         }
       </div>
+
+      {/* <div className={styles.cvSection}>
+        <h2>Skills</h2>
+        {
+          skillsData.map(x => <p key={x.key}>kek</p>)
+        }
+      </div> */}
+
       <div className={styles.cvSection}>
         <h2>Work</h2>
         {
