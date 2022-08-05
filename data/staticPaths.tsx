@@ -1,9 +1,9 @@
 import * as fs from 'fs'
 
-const baseUrl = 'https://www.rints.in'
+const baseUrl = process.env.NODE_ENV === 'production' ? './' : 'pages';
 
 export const staticPaths = fs
-  .readdirSync('pages')
+  .readdirSync(baseUrl)
   .filter(staticPage => {
     return ![
       'api',
