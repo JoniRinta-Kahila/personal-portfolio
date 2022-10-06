@@ -5,6 +5,7 @@ import RepoCard from './repoCard'
 import styles from '../../styles/reposPaginator.module.scss'
 import { RepoSortStyle } from '../../types/repoSort'
 import _ from 'lodash'
+import { RadioButton, RadioButtonStyleProps } from '@rintsin/common-components'
 
 type ReposPaginatorProps = {
   itemsPerPage: number
@@ -12,7 +13,7 @@ type ReposPaginatorProps = {
 }
 
 type ItemsProps = {
-  items: IRepo []
+  items: IRepo[]
   sorter: RepoSortStyle
 }
 
@@ -24,6 +25,21 @@ const Items: React.FC<ItemsProps> = ({ items, sorter }) => {
       }
     </>
   )
+}
+
+const radioStyles: RadioButtonStyleProps = {
+  colors: {
+    default: {
+      dot: 'transparent',
+      circle: 'orangered',
+      label: '#fff',
+    },
+    checked: {
+      dot: 'transparent',
+      circle: 'orangered',
+      label: '#fff',
+    }
+  }
 }
 
 const defaultSort = RepoSortStyle.recent;
@@ -49,34 +65,35 @@ const ReposPaginator: React.FC<ReposPaginatorProps> = ({ itemsPerPage, items }) 
     const newOffset = (e.selected * itemsPerPage) % items.length
     setItemOffset(newOffset)
   }
-  
+
   return (
     <>
       <div className={styles.sorters}>
-        <input
-          type='radio'
+        <RadioButton
+          variation='shutter'
+          label='Recent'
+          name='sort'
           value={RepoSortStyle.recent}
-          id='radio-recent'
-          name='sort'
-          checked={sorter === RepoSortStyle.recent}
           onChange={() => setSorter(RepoSortStyle.recent)}
-        /><label htmlFor='radio-recent'>Recent</label>
-        <input
-          type='radio'
+          styles={radioStyles}
+          defaultChecked
+        />
+        <RadioButton
+          variation='shutter'
+          label='Starts'
+          name='sort'
           value={RepoSortStyle.stars}
-          id='radio-stars'
-          name='sort'
-          checked={sorter === RepoSortStyle.stars}
           onChange={() => setSorter(RepoSortStyle.stars)}
-        /><label htmlFor='radio-stars'>Stars</label>
-        <input
-          type='radio'
-          value={RepoSortStyle.language}
-          id='radio-language'
+          styles={radioStyles}
+        />
+        <RadioButton
+          variation='shutter'
+          label='Language'
           name='sort'
-          checked={sorter === RepoSortStyle.language}
+          value={RepoSortStyle.language}
           onChange={() => setSorter(RepoSortStyle.language)}
-        /><label htmlFor='radio-language'>Language</label>
+          styles={radioStyles}
+        />
       </div>
       <Items items={currentItems} sorter={sorter} />
       <ReactPaginate
@@ -95,9 +112,9 @@ const ReposPaginator: React.FC<ReposPaginatorProps> = ({ itemsPerPage, items }) 
   )
 }
 
-function sortRepos(type: RepoSortStyle): (input: IRepo[]) => IRepo[] {  
+function sortRepos(type: RepoSortStyle): (input: IRepo[]) => IRepo[] {
   return input => {
-    switch(type){
+    switch (type) {
       case RepoSortStyle.recent:
         return _.sortBy(input, x => -new Date(x.updated_at ?? -1).getTime())
       case RepoSortStyle.stars:
