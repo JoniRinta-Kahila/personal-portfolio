@@ -1,19 +1,20 @@
 import type { LayoutProps } from '../../types/pageWithLayouts'
-import Navbar from '../navbar/navbar'
+import { ModalContextProvider } from '@rintsin/common-components'
 import styles from '../../styles/mainLayout.module.scss'
 import Footer from '../footer'
-import ModalContextProvider from '../context/modalContextProvider'
+import React from 'react'
+import Navbar from '../navbar/navbar';
 
 const Main: LayoutProps = ({ children }) => {
   return (
     <ModalContextProvider>
-      <Navbar
-        hideNavbarOnScroll
-      />
-      <div className={styles.content}>
-        {children}
-        <Footer />
-      </div>
+      <React.Fragment>
+        <div className={styles.content}>
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
+      </React.Fragment>
     </ModalContextProvider>
   )
 }
