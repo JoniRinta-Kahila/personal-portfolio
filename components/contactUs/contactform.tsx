@@ -3,6 +3,42 @@ import styles from '../../styles/contactform.module.scss'
 import handleSubmit from './submitForm'
 import { BeatLoader } from 'react-spinners'
 import { BsCheck2Circle } from 'react-icons/bs'
+import { Button, TextArea, TextAreaStylesProps, TextField, TextFieldStylesProps } from '@rintsin/common-components'
+import { useModalContext } from '@rintsin/common-components'
+
+const inputStyles: TextFieldStylesProps = {
+  colors: {
+    default: {
+      borderColor: 'orangered',
+      // inputBackgroundColor: '#fff',
+      inputColor: '#ffe4c4',
+      labelColor: 'orangered',
+    },
+    focus: {
+      labelColor: 'purple',
+      borderColor: 'purple',
+      inputColor: '#ffe4c4',
+    },
+    invalid: {
+      labelColor: 'red'
+    }
+  }
+}
+
+const messageStyles: TextAreaStylesProps = {
+  colors: {
+    default: {
+      labelColor: 'orangered',
+      borderColor: 'orangered',
+      inputColor: '#ffe4c4',
+    },
+    focus: {
+      labelColor: "purple",
+      borderColor: "purple",
+      inputColor: '#ffe4c4',
+    }
+  }
+}
 
 const Contactform: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false)
@@ -16,8 +52,18 @@ const Contactform: React.FC = () => {
   const [ready, setReady] = useState<boolean>(false)
   const [response, setResponse] = useState<any>()
 
-  const buttonRef = useRef<HTMLButtonElement>(null)
+  const { modal, exitModal } = useModalContext()
 
+  useEffect(() => {
+    if (!ready) return
+    const id = setTimeout(() => {
+      console.log('Clear timeout')
+      exitModal()
+    }, 3000)
+    return () => clearTimeout(id)
+  }, [exitModal, ready])
+
+  const buttonRef = useRef<HTMLButtonElement>(null)
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
@@ -33,7 +79,6 @@ const Contactform: React.FC = () => {
     }, e)
 
     setResponse(submitResponse)
-    console.log(submitResponse)
 
     if (submitResponse.valid && submitResponse.success) {
       setName('')
@@ -44,7 +89,6 @@ const Contactform: React.FC = () => {
       setSubject('')
       setReady(true)
       setLoading(false)
-
       return
     }
   }
@@ -70,50 +114,60 @@ const Contactform: React.FC = () => {
       </div>
       <form onSubmit={(e) => onSubmit(e)} className={styles.form}>
         <div className={styles.inputs}>
-          <input
+          <TextField
             value={name}
             onChange={e => setName(e.target.value)}
-            required type="text"
-            placeholder='Name *'
+            required
+            type='text'
+            label='Name'
             disabled={loading}
+            styles={inputStyles}
           />
-          <input
+          <TextField
             value={company}
             onChange={e => setCompany(e.target.value)}
-            type="text"
-            placeholder='Company'
+            type='text'
+            label='Company'
             disabled={loading}
+            styles={inputStyles}
           />
-          <input
+          <TextField
             value={email}
             onChange={e => setEmail(e.target.value)}
-            required type="email"
-            placeholder='Email *'
+            required
+            type='email'
+            label='Email'
             disabled={loading}
+            styles={inputStyles}
           />
-          <input
+          <TextField
             value={phone}
             onChange={e => setPhone(e.target.value)}
             type="tel"
-            placeholder='Phone'
+            label='Phone'
             disabled={loading}
+            styles={inputStyles}
           />
-          <input
+          <TextField
             value={subject}
             onChange={e => setSubject(e.target.value)}
-            required type="text"
-            placeholder='Subject *'
+            required
+            type="text"
+            label='Subject'
             disabled={loading}
+            styles={inputStyles}
           />
         </div>
         <div className={styles.message}>
-          <textarea value={message}
+          <TextArea
             onChange={e => setMessage(e.target.value)}
+            value={message}
             required
-            placeholder='Message *'
+            label='Message'
             disabled={loading}
+            styles={messageStyles}
           />
-          <button ref={buttonRef} type='submit' className={styles.submit}>
+          <button ref={buttonRef} tabIndex={6} type='submit' className={styles.submit}>
             {
               loading
                 ? <BeatLoader size={8} />
