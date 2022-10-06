@@ -1,3 +1,4 @@
+import { useModalContext } from '@rintsin/common-components';
 import Link from 'next/link';
 import React from 'react'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
@@ -5,17 +6,16 @@ import { MdAlternateEmail } from 'react-icons/md'
 import { RiMessage2Line } from 'react-icons/ri'
 import styles from '../styles/footer.module.scss'
 import Contactform from './contactUs/contactform';
-import { useModalContext } from './context/modalContextProvider'
 
 const Footer: React.FC = () => {
 
-  const { setModalContent, setModalOpenState } = useModalContext()
+  const { modal } = useModalContext()
 
-  const openContactformModal = () => {
-    setModalContent(<Contactform />)
-    setModalOpenState(true)
+  const showModal = () => {
+    modal({
+      content: <Contactform />,
+    })
   }
-
   return (
     <div className={styles.container}>
       <Link href='https://github.com/JoniRinta-Kahila' passHref>
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
         </a>
       </Link>
 
-      <div onClick={openContactformModal} style={{cursor:'pointer'}}>
+      <div onClick={showModal} style={{ cursor: 'pointer' }}>
         <RiMessage2Line size={30} color='#ff4500' />
       </div>
 
