@@ -80,7 +80,7 @@ const ReposPaginator: React.FC<ReposPaginatorProps> = ({ itemsPerPage, items }) 
         />
         <RadioButton
           variation='shutter'
-          label='Starts'
+          label='Stars'
           name='sort'
           value={RepoSortStyle.stars}
           onChange={() => setSorter(RepoSortStyle.stars)}

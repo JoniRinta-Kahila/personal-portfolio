@@ -86,7 +86,7 @@ const Home = () => {
       <div className={styles.header}>
         <h1>HELLO!</h1>
         <h2>Welcome to my portfolio page. My name is <b>Joni Rinta-Kahila.</b></h2>
-        <h3>I am software developer and currently working as a vocotional teacher at city of Vantaa</h3>
+        <h3>I am software developer and currently working at <a href='https://dataops.fi/'>DataOps Oy</a>.</h3>
         <h4>Here you will find my CV and some of my projects.</h4>
       </div>
     </div>

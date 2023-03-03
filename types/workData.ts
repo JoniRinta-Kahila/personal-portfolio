@@ -1,8 +1,9 @@
 export interface IWork {
   key: number;
-  emplyer: string;
+  employer: string;
   title: string;
   workStart: string;
   workEnd: string;
   description: string;
+  companyWebsite?: string;
 }

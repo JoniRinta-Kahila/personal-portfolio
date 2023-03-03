@@ -23,8 +23,11 @@ const WorkCard: React.FC<WorkCardProps> = ({ data }) => {
             </div>
             <div className={styles.employer}>
               {
-                data.emplyer
-              }
+                data.companyWebsite
+                  ? <a href={data.companyWebsite} target="_blank" rel="noreferrer">
+                      {data.employer}
+                    </a>
+                  : data.employer}
             </div>
           </div>
           <div className={styles.perioid}>
