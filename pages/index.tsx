@@ -3,8 +3,15 @@ import styles from '../styles/Home.module.scss'
 import MainLayout from '../components/layouts/main'
 import { tsParticles } from 'tsparticles';
 import { ReactElement, useEffect } from 'react';
+import { useRouter } from "next/router";
+import { useIsAuthenticated } from "@azure/msal-react";
 
 const Home = () => {
+  const router = useRouter();
+  const isAuthenticated = useIsAuthenticated();
+
+  // Check if the user is accessing the page via the "my.rint.si" subdomain
+  const isMyRintSiSubdomain = router.pathname.startsWith("/my");
 
   useEffect(() => {
     console.log('useEffect => load particles')
@@ -80,6 +87,14 @@ const Home = () => {
       retina_detect: true
     })
   })
+
+  // If the user is accessing the page via the "my.rint.si" subdomain and is not authenticated,
+  // redirect them to the login page
+  if (isMyRintSiSubdomain && !isAuthenticated) {
+    router.push("/my/login");
+    return null;
+  }
+
 
   return (
     <div className={styles.container} id='tsparticles'>
