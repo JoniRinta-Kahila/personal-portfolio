@@ -32,9 +32,7 @@ const PinnedProjects: React.FC<PinnedProjectsProps> = () => {
         <p>Multiplexer is video multiplayer tool that lets you build your own multiplayer layouts that you can easily share with others.</p>
         <div className={styles.projectLink}>
           <Link href='https://www.multiplexer.fi/' passHref>
-            <a target='_blank' rel='noreferrer'>
-              <BsFillArrowRightCircleFill size={30} style={{ fill: "url(#gradient-svg)" }} />
-            </a>
+            <BsFillArrowRightCircleFill size={30} style={{ fill: "url(#gradient-svg)" }} />
           </Link>
         </div>
       </div>
@@ -48,9 +46,7 @@ const PinnedProjects: React.FC<PinnedProjectsProps> = () => {
         <p>Role based publishing platform project.</p>
         <div className={styles.projectLink}>
           <Link href='https://blog-43f84.web.app' passHref>
-            <a target='_blank' rel='noreferrer'>
               <BsFillArrowRightCircleFill size={30} style={{ fill: "url(#gradient-svg)" }} />
-            </a>
           </Link>
         </div>
       </div>
@@ -63,15 +59,13 @@ const PinnedProjects: React.FC<PinnedProjectsProps> = () => {
         </span>
         <p>Performs multiple brute force and username enumerations tasks in same time. This is a continuation of the 
           <Link href="https://github.com/JoniRinta-Kahila/WPCracker" passHref>
-            <a target='_blank' rel='noreferrer'> <b><u>WPCracker</u></b> </a>
+            <b><u>WPCracker</u></b>
           </Link>
           project.
         </p>
         <div className={styles.projectLink}>
           <Link href='https://github.com/JoniRinta-Kahila/wpcrackergui' passHref>
-            <a target='_blank' rel='noreferrer'>
               <BsFillArrowRightCircleFill size={30} style={{ fill: "url(#gradient-svg)" }} />
-            </a>
           </Link>
         </div>
       </div>

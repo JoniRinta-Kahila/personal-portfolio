@@ -19,20 +19,14 @@ const Footer: React.FC = () => {
   return (
     <div className={styles.container}>
       <Link href='https://github.com/JoniRinta-Kahila' passHref>
-        <a target='_blank' rel='noreferrer'>
           <BsGithub size={30} color='#add8e6' />
-        </a>
       </Link>
 
       <Link href='https://www.linkedin.com/in/joni-rinta-kahila-012690a0/' passHref>
-        <a target='_blank' rel='noreferrer'>
           <BsLinkedin size={30} color='#f0ffff' />
-        </a>
       </Link>
       <Link href='m&#97;i&#108;to&#58;j&#111;ni&#46;r%69&#37;6Et%61&#45;kahi&#108;%61&#64;hotm%&#54;1&#105;l&#46;co%6D' passHref>
-        <a>
           <MdAlternateEmail size={30} color='#ffc0cb' />
-        </a>
       </Link>
 
       <div onClick={showModal} style={{ cursor: 'pointer' }}>

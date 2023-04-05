@@ -57,9 +57,7 @@ const RepoCard: React.FC<RepoCardProps> = ({ data }) => {
       </div>
       <div className={styles.button}>
         <Link href={data.html_url ?? '.'}>
-          <a rel='noreferrer' target='_blank'>
             Open in github
-          </a>
         </Link>
       </div>
     </div>
